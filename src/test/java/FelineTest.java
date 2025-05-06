@@ -25,22 +25,22 @@ public class FelineTest {
     }
 
     @Test
-    public void testGetKittensWithCount() {
+    public void GetKittensWithCountTest() {
         assertEquals(expectedKittens, feline.getKittens(expectedKittens));
     }
 
     @Test
-    public void testGetKittensDefault() {
+    public void GetKittensDefaultTest() {
         assertEquals(1, feline.getKittens());
     }
 
     @Test
-    public void testGetFamily() {
+    public void GetFamilyTest() {
         assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
-    public void testEatMeat() throws Exception {
+    public void EatMeatTest() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         assertEquals(expectedFood, feline.eatMeat());
     }

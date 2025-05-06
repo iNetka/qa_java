@@ -15,26 +15,20 @@ public class CatTest {
     private Feline feline;
 
     @Test
-    public void testGetSound() {
+    public void GetSoundTest() {
         Cat cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
     }
 
     @Test
-    public void testGetFood() throws Exception {
-        // Подготовка тестовых данных
+    public void GetFoodTest() throws Exception {
+
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
 
-        // Настройка поведения мока
         when(feline.eatMeat()).thenReturn(expectedFood);
-
-        // Создание тестируемого объекта
         Cat cat = new Cat(feline);
-
-        // Вызов метода и проверка результата
         List<String> actualFood = cat.getFood();
 
-        // Проверки
         assertEquals(expectedFood, actualFood);
         verify(feline, times(1)).eatMeat();
     }
